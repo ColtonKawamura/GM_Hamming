@@ -30,11 +30,11 @@ for i = 1:numel(data_files_info)
         frequency = str2double(match{3});
         amplitude = str2double(match{4});
         
-        fprintf('Processing data file: %s\n', data_file_path);
-        fprintf('Friction status: %s\n', friction_status);
-        fprintf('Pressure: %g\n', pressure);
-        fprintf('Frequency: %g\n', frequency);
-        fprintf('Amplitude: %g\n', amplitude);
+        % fprintf('Processing data file: %s\n', data_file_path);
+        % fprintf('Friction status: %s\n', friction_status);
+        % fprintf('Pressure: %g\n', pressure);
+        % fprintf('Frequency: %g\n', frequency);
+        % fprintf('Amplitude: %g\n', amplitude);
         
         % Perform data processing and sinusoidal fitting here
         % Use the extracted parameters (friction_status, pressure, frequency, amplitude)
@@ -135,7 +135,7 @@ for i = 1:numel(data_files_info)
 
                 % Check if R2 is less than 0.5
                 if R2 < 0.5
-                    disp(['R^2 value is less than 0.5 for probe ' num2str(probe_number) ', continuing with the next probe.']);
+                    % disp(['R^2 value is less than 0.5 for probe ' num2str(probe_number) ', continuing with the next probe.']);
                 else
                     % If good, store the vector and probe number
                     initial_position_vector = [initial_position_vector, probe_data(1)];
@@ -145,7 +145,7 @@ for i = 1:numel(data_files_info)
                     clear 'R2';
                 end
             catch
-                disp(['R^2 value is less than 0.5 for probe ' num2str(probe_number) ', continuing with the next probe.']);
+                % disp(['R^2 value is less than 0.5 for probe ' num2str(probe_number) ', continuing with the next probe.']);
                 clear 'R';
                 clear 'R2';
             end
